@@ -2,6 +2,8 @@
 
 > **Update 2026-09-11:** For the local `pymitsubishi/homeassistant-mitsubishi` integration, **Remote Temperature is now the recommended path**. If it works with your adapter/unit, the older target-offset / step-compensation logic is no longer needed for the main Mitsubishi room-temperature control.
 
+> **Update 2026-10-11 – known limitation:** With *Experimental Remote Temperature* enabled, the MAC-577IF2-E adapter can occasionally stop responding and recover on its own after 10–20+ minutes. This is a known firmware issue confirmed by the integration maintainer ([pymitsubishi/homeassistant-mitsubishi#47](https://github.com/pymitsubishi/homeassistant-mitsubishi/issues/47)). Let your automations tolerate short `unavailable` phases (e.g. up to 30 minutes) and keep MELCloud Home as a fallback. Details: [forum update](https://community.home-assistant.io/t/mitsubishi-home-assistant-four-temperature-control-paths-remote-temperature-recommended/1024750/2).
+
 ## The four solution paths
 
 ### 1. Home Assistant simulates AUTO by choosing HEAT or COOL
