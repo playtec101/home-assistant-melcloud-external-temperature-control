@@ -2,6 +2,8 @@
 
 > **Update 11.09.2026:** Für die lokale Integration `pymitsubishi/homeassistant-mitsubishi` ist **Remote Temperature jetzt der empfohlene Weg**. Wenn diese Funktion mit Adapter und Klimagerät funktioniert, wird die bisherige Offset-/Stufenlogik für die Hauptregelung nicht mehr benötigt.
 
+> **Update 2026-10-11 – bekannte Einschränkung:** Mit aktivierter *Experimental Remote Temperature* kann der MAC-577IF2-E-Adapter gelegentlich nicht mehr reagieren und erholt sich erst nach 10–20+ Minuten von selbst. Das ist ein bekannter Firmware-Fehler, bestätigt vom Entwickler der Integration ([pymitsubishi/homeassistant-mitsubishi#47](https://github.com/pymitsubishi/homeassistant-mitsubishi/issues/47)). Automationen sollten kurze `unavailable`-Phasen (z. B. bis 30 Minuten) tolerieren, MELCloud Home bleibt als Fallback. Details: [Forum-Nachtrag](https://community.home-assistant.io/t/mitsubishi-home-assistant-four-temperature-control-paths-remote-temperature-recommended/1024750/2).
+
 ## Die vier Lösungswege
 
 ### 1. Home Assistant simuliert AUTO und wählt HEAT oder COOL
